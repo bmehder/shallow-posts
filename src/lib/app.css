@@ -24,6 +24,25 @@ html {
 	background-color: hsl(200 10% 10%);
 }
 
+h3 {
+	line-height: 1.4;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+a {
+	color: #bada55;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 .auto-grid {
 	--gap: 2rem;
 	--min: 12rem;
@@ -43,23 +62,4 @@ html {
 .cropped {
 	aspect-ratio: 16 / 9;
 	object-position: top;
-}
-
-h3 {
-	line-height: 1.4;
-}
-
-img {
-	width: 100%;
-	height: 100%;
-	display: block;
-	object-fit: cover;
-}
-
-a {
-	color: #bada55;
-
-	&:hover {
-		text-decoration: none;
-	}
 }

@@ -1,12 +1,12 @@
 <script>
 	/** @type {HTMLDialogElement} */
-	export let modal
+	export let modalElement
 </script>
 
-<dialog bind:this={modal} on:close>
-	<button on:click={() => modal.close()}
-		><iconify-icon icon="carbon:close-filled"></iconify-icon></button
-	>
+<dialog bind:this={modalElement} on:close>
+	<button on:click={() => modalElement.close()}>
+		<iconify-icon icon="carbon:close-filled"></iconify-icon>
+	</button>
 	<slot />
 </dialog>
 

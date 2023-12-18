@@ -13,6 +13,8 @@
 
 <style>
 	article {
+		max-width: 48rem;
+		margin-inline: auto;
 		padding: 1.5rem;
 		padding-block-end: 3rem;
 	}

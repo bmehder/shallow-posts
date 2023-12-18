@@ -9,17 +9,19 @@
 	export let data
 
 	/** @type {HTMLDialogElement} */
-	let modal
+	let modalElement
 
 	/** @param {MouseEvent} evt */
-	async function showModal(evt) {
-		const { href } = /** @type {HTMLAnchorElement} */ (evt.currentTarget)
+	async function showModal() {
+		
+		/** @type {HTMLAnchorElement} */
+		const { href } = this
 
 		const result = await preloadData(href)
 
 		if (result.type === 'loaded' && result.status === 200) {
 			pushState(href, { selected: result.data })
-			modal?.showModal()
+			modalElement?.showModal()
 		} else {
 			goto(href)
 		}
@@ -33,10 +35,10 @@
 		}, 300)
 	}
 
-	$: !$page.state.selected && modal?.close()
+	$: !$page.state.selected && modalElement?.close()
 </script>
 
-<Modal bind:modal on:close={closeModal}>
+<Modal bind:modalElement on:close={closeModal}>
 	{#if $page.state.selected}
 		<Post data={$page.state.selected} />
 	{/if}
