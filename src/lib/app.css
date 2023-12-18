@@ -1,0 +1,65 @@
+:root {
+	color-scheme: dark light;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+*:not(dialog) {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+html {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: hsl(200 10% 98%);
+	background-color: hsl(200 10% 10%);
+}
+
+.auto-grid {
+	--gap: 2rem;
+	--min: 12rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+	gap: var(--gap);
+}
+
+.flow > * + * {
+	margin-block-start: 1.5rem;
+}
+
+.square {
+	aspect-ratio: 1;
+}
+
+.cropped {
+	aspect-ratio: 16 / 9;
+	object-position: top;
+}
+
+h3 {
+	line-height: 1.4;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+a {
+	color: #bada55;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
